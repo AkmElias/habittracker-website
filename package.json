@@ -5,13 +5,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "node server.js",
+    "start:next": "next start",
+    "lint": "eslint",
+    "optimize-screenshots": "node scripts/optimize-screenshots.js"
   },
   "dependencies": {
+    "@react-email/components": "^1.0.7",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.34.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-email": "^5.2.8",
+    "resend": "^6.9.2",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

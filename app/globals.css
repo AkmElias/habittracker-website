@@ -3,13 +3,58 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* HabitTracker Brand Colors */
+  --purple-primary: #6200EE;
+  --purple-secondary: #7C4DFF;
+  --teal: #03DAC6;
+  --orange: #FF9500;
 }
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Purple Brand Colors */
+  --color-purple-50: #F3E5F5;
+  --color-purple-100: #E1BEE7;
+  --color-purple-200: #CE93D8;
+  --color-purple-300: #BA68C8;
+  --color-purple-400: #AB47BC;
+  --color-purple-500: #7C4DFF;
+  --color-purple-600: #6200EE;
+  --color-purple-700: #5600E8;
+  --color-purple-800: #4A00E0;
+  --color-purple-900: #3700B3;
+  --color-purple-950: #1A0052;
+
+  /* Accent Colors */
+  --color-teal-400: #26E7D6;
+  --color-teal-500: #03DAC6;
+  --color-teal-600: #00C4B4;
+
+  --color-orange-400: #FFB347;
+  --color-orange-500: #FF9500;
+  --color-orange-600: #FF8C00;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Border Radius */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-container: 1.5rem;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-scale-in: scale-in 0.4s ease-out;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +64,96 @@
   }
 }
 
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: var(--purple-primary);
+  color: white;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--purple-primary);
+  outline-offset: 2px;
+}
+
+/* Gradient Utilities */
+.gradient-purple {
+  background: linear-gradient(135deg, var(--purple-secondary) 0%, var(--purple-primary) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--purple-secondary) 0%, var(--purple-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Purple Glow */
+.glow-purple {
+  box-shadow: 0 0 30px rgba(124, 77, 255, 0.3);
+}
+
+.glow-purple:hover {
+  box-shadow: 0 0 40px rgba(124, 77, 255, 0.5);
 }
