@@ -10,7 +10,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Configuration
-SERVER_IP="${1:-your-server-ip}"
+SERVER_IP="${1:-103.174.50.84}"
 SERVER_USER="root"
 APP_DIR="/var/www/habittracker-website"
 APP_NAME="habittracker-website"
@@ -18,10 +18,9 @@ APP_NAME="habittracker-website"
 echo -e "${GREEN}🚀 Starting deployment to ${SERVER_IP}...${NC}"
 
 # Check if server IP is provided
-if [ "$SERVER_IP" = "your-server-ip" ]; then
-    echo -e "${RED}❌ Error: Please provide server IP${NC}"
-    echo "Usage: ./deploy.sh [server-ip]"
-    exit 1
+if [ "$SERVER_IP" = "103.174.50.84" ] && [ -z "$1" ]; then
+    echo -e "${YELLOW}ℹ️  Using default server IP: ${SERVER_IP}${NC}"
+    echo "   (You can override with: ./deploy.sh [custom-ip])"
 fi
 
 # Test SSH connection
@@ -71,7 +70,7 @@ ENDSSH
 if [ $? -eq 0 ]; then
     echo ""
     echo -e "${GREEN}✅ Deployment successful!${NC}"
-    echo -e "${GREEN}🌐 Your site should be live at: https://habittracker.app${NC}"
+    echo -e "${GREEN}🌐 Your site should be live at: https://habittracker.akmelias.com${NC}"
 else
     echo ""
     echo -e "${RED}❌ Deployment failed. Check the logs above for details.${NC}"
