@@ -46,7 +46,7 @@ export default function Logo({ className, size = 'md', showText = true }: LogoPr
       </div>
       {showText && (
         <span className={cn('font-bold text-gray-900', textSizes[size])}>
-          
+          Habit Tracker
         </span>
       )}
     </Link>
