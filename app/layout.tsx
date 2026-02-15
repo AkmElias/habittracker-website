@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: "Habit Tracker - Build Better Habits, Transform Your Life",
-    template: "%s | Habit Tracker",
+    template: "%s | Habit Tracker App",
   },
   description:
     "Build the life you want, one habit at a time. Track your daily habits, set goals, and transform your life with our powerful Android app. Free to download with premium features available.",
