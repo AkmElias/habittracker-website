@@ -70,8 +70,8 @@ export async function POST(request: NextRequest) {
 
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: 'Habit Tracker <onboarding@resend.dev>', // Replace with your verified domain
-      to: [process.env.CONTACT_EMAIL || 'support@habittracker.app'],
+      from: 'Habit Tracker <noreply@akmelias.com>',
+      to: [process.env.CONTACT_EMAIL || 'eliascse33@gmail.com'],
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       react: ContactFormEmail({ name, email, subject, message }),
